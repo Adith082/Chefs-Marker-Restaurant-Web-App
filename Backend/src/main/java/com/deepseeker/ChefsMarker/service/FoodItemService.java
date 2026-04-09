@@ -17,11 +17,11 @@ public class FoodItemService {
         this.foodItemRepository = foodItemRepository;
     }
 
-    void saveFoodItem(FoodItem foodItem) {
-        foodItemRepository.save(foodItem);
+    public UUID saveFoodItem(FoodItem foodItem) {
+        return foodItemRepository.save(foodItem).getId();
     }
 
-    List<FoodItem> getAllFoodItems() {
+    public List<FoodItem> getAllFoodItems() {
         return foodItemRepository.findAll();
     }
 
